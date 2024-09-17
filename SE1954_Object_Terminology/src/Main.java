@@ -43,7 +43,6 @@ public class Main {
         enhance.PTB2 pt22 = new enhance.PTB2();
 
         pt22.display(true);
-
     }
     
 }
