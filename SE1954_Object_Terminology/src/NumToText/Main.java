@@ -1,19 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 package NumToText;
-
-
-/**
- *
- * @author Kim Minh Đức - HE181371
- */
-
-import java.lang.*;
-import java.util.*;
-import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,21 +9,18 @@ public class Main {
     public static String NumToText(long n) {
         String result = "";
         
-        if (n > 1000000000) {
+        if (n > 1000000000)
             return NumToText(n / 1000000000) + " tỉ " + NumToText(n % 1000000000);
-        }
         
-        if (n > 1000000) {
+        if (n > 1000000)
             return NumToText(n / 1000000) + " triệu " + NumToText(n % 1000000);
-        }
         
-        if (n > 1000) {
+        if (n > 1000)
             return NumToText(n / 1000) + " nghìn " + NumToText(n % 1000);
-        }
         
-        String[] number = {"không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín",};
+        String[] number = {"không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"};
         
-        String tram=""; 
+        String tram = ""; 
         int x = (int)n / 100;
         if (x >= 1) tram = number[x] + " trăm ";
         
