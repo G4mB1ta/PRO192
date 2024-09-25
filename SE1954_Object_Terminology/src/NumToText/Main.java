@@ -3,7 +3,7 @@ package NumToText;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(NumToText(10460810482000L));
+        System.out.println(NumToText(10460810482004L));
     }
     
     public static String NumToText(long n) {
@@ -26,6 +26,7 @@ public class Main {
         
         String chuc = "";        
         x = (int)(n % 100) / 10;
+        if (x == 0 && ((int) n % 10 != 0)) chuc = " linh ";
         if (x == 1) chuc = " mười ";
         if (x > 1) chuc = number[x] + " mươi ";
         
