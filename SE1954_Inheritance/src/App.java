@@ -7,17 +7,13 @@
  *
  * @author kmduc
  */
-public class Main {
+public class App {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        Point3D pt3d = new Point3D();
-        System.out.println(pt3d.toString());
-        
     }
     
 }

@@ -5,8 +5,6 @@
 //@author Kim Minh Đức - HE181371
 
 import java.lang.*;
-import java.util.*;
-import java.io.*;
 
 public class Point {
     double x, y;
@@ -15,4 +13,27 @@ public class Point {
         this.x = x; 
         this.y = y;
     }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getName() + "{" + "x=" + x + ", y=" + y + '}';
+    }
+    
+    
 }
