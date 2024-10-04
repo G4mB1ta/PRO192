@@ -1,51 +1,25 @@
-#include<iostream>
-#include <unordered_set>
+#include <iostream>
 
 using namespace std;
-
-unsigned long long ucln(unsigned long long a, unsigned long long b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-unsigned long long bcnn(unsigned long long a, unsigned long long b) {
-    return (a * b) / ucln(a, b);
-}
-
+const long long MOD = 1000000007;
 int main() {
-	unsigned long long N, A, B ,C ,AnB, AnC, BnC;
-	unordered_set<unsigned long long> tempSet;
-	cin >> N >> A >> B >> C;
-	AnB = bcnn(A, B);
-	AnC = bcnn(A, C);
-	BnC = bcnn(B, C);
-	
-	unsigned long long x = AnB;
-	while (x <= N) {
-		if (N % x == 0)
-			tempSet.insert(x);
-		x += AnB;
-	}
-	x = AnC;
-	while (x <= N) {
-		if (N % x == 0)
-			tempSet.insert(x);
-		x += AnC;
-	}
-	x = BnC;
-	while (x <= N) {
-		if (N % x == 0)
-			tempSet.insert(x);
-		x += BnC;
-	}
-	
-//	for (unsigned long long element : tempSet) {
-//        std::cout << element << " ";
-//    }
-    cout << endl <<tempSet.size();
-	return 0;
+    long n, countEven=0, countOdd=0;
+    cin >> n;
+    long x;
+    long sumOdd=0, sumEven=0;
+    for (int i = 0; i < n; i ++) {
+        cin >> x;
+        if (x % 2 == 0) {
+            sumEven = (sumEven + x)% MOD;
+            countEven ++;
+        } else {
+            sumOdd = (sumOdd + x)% MOD;
+            countOdd ++;
+        }
+    }
+    long long prod1 = (sumOdd * countEven) % MOD;
+    long long prod2 = (countOdd * sumEven) % MOD;
+    cout << (prod1 + prod2) % MOD;
+
+    return 0;
 }
