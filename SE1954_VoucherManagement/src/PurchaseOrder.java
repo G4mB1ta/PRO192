@@ -1,26 +1,6 @@
 
-import Voucher.PlatformVoucher;
-import Voucher.ShopVoucher;
-import Voucher.Voucher;
-import Voucher.ShipVoucher;
+import Voucher.*;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
-enum PaymentTerm {
-    CreditCard,
-    ATM,
-    VisaCard,
-}
-
-enum PurchaseOrderState {
-    Confirming,
-    Delivering,
-    Finished,
-}
 
 public class PurchaseOrder {
     int PurchaseOrderID;    // ID of PurchaseOrder
@@ -56,6 +36,21 @@ public class PurchaseOrder {
         deliveryDate = "";
         status = "";
         paymentTerm = "";
+    }
+
+    public PurchaseOrder(int PurchaseOrderID, Customer Customer, Vendor Vendor, ShopVoucher shopVoucher, ShipVoucher shipVoucher, PlatformVoucher platformVoucher, Cart cart, String createdOn, String createdBy, String deliveryDate, String status, String paymentTerm) {
+        this.PurchaseOrderID = PurchaseOrderID;
+        this.Customer = Customer;
+        this.Vendor = Vendor;
+        this.shopVoucher = shopVoucher;
+        this.shipVoucher = shipVoucher;
+        this.platformVoucher = platformVoucher;
+        this.cart = cart;
+        this.createdOn = createdOn;
+        this.createdBy = createdBy;
+        this.deliveryDate = deliveryDate;
+        this.status = status;
+        this.paymentTerm = paymentTerm;
     }
 
     public int getPurchaseOrderID() {

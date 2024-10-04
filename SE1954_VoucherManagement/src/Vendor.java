@@ -6,7 +6,7 @@
 import java.lang.*;
 
 public class Vendor extends Person {
-    int vendorID;
+    int vendorID;  // ID of Vendor
 
     public Vendor() {
         super();

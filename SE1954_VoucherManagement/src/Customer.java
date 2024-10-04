@@ -6,7 +6,7 @@
 import java.lang.*;
 
 public class Customer extends Person {
-    int customerID;     //
+    int customerID;     // ID of Customer
     String tier; // Tier of Customer
 
     public Customer() {
