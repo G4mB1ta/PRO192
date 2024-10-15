@@ -61,17 +61,18 @@ public class Painting extends Item {
         this.isFramed = isFramed;
     }
     
-    
-    public void outputPainting() {
-        output();
+    @Override
+    public void output() {
+        super.output();
         System.out.println("Height: " + height);
         System.out.println("Width: " + width);
         System.out.println("Is Watercolour: " + isWatercolour);
         System.out.println("Is Framed: " + isFramed);
     }
     
-    public void inputPainting() {
-        input();
+    @Override
+    public void input() {
+        super.input();
         Scanner sc = new Scanner(System.in);
         System.out.println("Height? ");
         this.height = sc.nextInt();
@@ -82,4 +83,11 @@ public class Painting extends Item {
         System.out.println("Is Framed(true/false)?");
         this.isFramed = sc.nextBoolean(); sc.nextLine();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", height=" + height + ", width=" + width + ", isWatercolour=" + isWatercolour + ", isFramed=" + isFramed;
+    }
+    
+    
 }

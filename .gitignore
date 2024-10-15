@@ -1,14 +1,18 @@
 /SE1954_Java_Foundation/nbproject/private/
+/SE1954_Java_Foundation/build/
 /SE1954_Geomatrix/nbproject/private/
 /SE1954_KimMinhDuc_HE181371/nbproject/private/
 /SE1954_KimMinhDuc_HE181371/build/
 /SE1954_Encapsulation/nbproject/private/
 /SE1954_Encapsulation/build/
-/SE1954_Java_Foundation/build/
 /SE1954_Inheritance/nbproject/private/
 /SE1954_VoucherManagement/nbproject/private/
 /SE1954_VoucherManagement/build/
-/SE1954_Giaithuat/nbproject/private/
-/SE1954_Giaithuat/build/
 /ItemManager/nbproject/private/
 /ItemManager/build/
+
+# Others
+/Assignment/
+/FileExample/
+/SE1954_Array_of_Objects/nbproject/private/
+/HUS_NHNM/

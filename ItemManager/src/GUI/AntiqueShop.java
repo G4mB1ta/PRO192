@@ -24,24 +24,24 @@ public class AntiqueShop {
         switch(choice){
             case 1:
                 item=new Vase();
-                ((Vase)item).inputVase(); 
+                ((Vase)item).input(); 
                 break; 
             case 2:
                 item =new Statue();
-                ((Statue) item).inputStatue(); 
+                ((Statue) item).input(); 
                 break;
             case 3:
                 item =new Painting();
-                ((Painting) item).inputPainting();
+                ((Painting) item).input();
                 break;
             case 4:
                 if(item!=null){
                     if(item instanceof Vase)
-                        ((Vase) item).outputVase();
+                        ((Vase) item).output();
                     else if(item instanceof Statue)
-                        ((Statue) item).outputStatue ();
+                        ((Statue) item).output();
                     else if(item instanceof Painting)
-                        ((Painting) item).outputPainting (); 
+                        ((Painting) item).output(); 
                     }
                 else System.out.println(" you need to create an object");
                 break;

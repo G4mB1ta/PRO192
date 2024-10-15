@@ -39,19 +39,26 @@ public class Statue extends Item {
         this.colour = colour;
     }
     
-    public void outputStatue() {
+    @Override
+    public void output() {
         output();
         System.out.println("Weight: " + weight);
         System.out.println("Colour: " + colour);
     }
     
-    public void inputStatue() {
-        input();
+    @Override
+    public void input() {
+        super.input();
         Scanner sc = new Scanner(System.in);
         System.out.println("Weight? ");
         this.weight = sc.nextInt(); 
         sc.nextLine();
         System.out.println("Colour? ");
         this.colour = sc.nextLine(); 
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", weight=" + weight + ", colour=" + colour ;
     }
 }

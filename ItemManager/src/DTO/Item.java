@@ -39,7 +39,7 @@ public class Item {
     
     public void output() {
         System.out.println(this.getClass().getName());
-        System.out.println("Value: "+ value);
+        System.out.println("\tValue: "+ value);
         System.out.println("Creator: " + creator);
     }
     
@@ -57,4 +57,12 @@ public class Item {
         this.value = valueInput;
         this.creator = creatorInput;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getName() + ": value=" + value + ", creator=" + creator;
+    }
+
+   
+    
 }

@@ -44,20 +44,26 @@ public class Vase extends Item {
         this.material = material;
     }
 
-    
-    public void outputVase() {
-        output();
+    @Override
+    public void output() {
+        super.output();
         System.out.println("Height: " + height);
         System.out.println("Material: " + material);
     }
     
-    public void inputVase() {
-        input();
+    @Override
+    public void input() {
+        super.input();
         Scanner sc = new Scanner(System.in);
         System.out.println("Height? ");
         this.height = sc.nextInt();         
         sc.nextLine();
         System.out.println("Material? ");
         this.material = sc.nextLine();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", height=" + height + ", material=" + material;
     }
 }
