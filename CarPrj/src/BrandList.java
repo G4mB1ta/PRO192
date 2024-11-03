@@ -14,7 +14,7 @@ public class BrandList extends ArrayList<Brand> {
     
     // 1
     public boolean loadFromFile(String fileName) {
-        File f = new File("brands.txt");
+        File f = new File(fileName);
         if (!f.exists()) {
 //            System.out.println("File is not exists");
             return false;
@@ -44,7 +44,7 @@ public class BrandList extends ArrayList<Brand> {
         return true;
     }
     
-    // 4
+    // 5
     public boolean saveToFile(String fileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             
@@ -102,18 +102,19 @@ public class BrandList extends ArrayList<Brand> {
         
     }
     
+    //4
     public void updateBrand() {
         try {
             System.out.print("Enter brand id: ");
             Scanner sc = new Scanner(System.in);
-            String brandID = sc.nextLine(); sc.nextLine();
+            String brandID = sc.nextLine();
             int pos = searchID(brandID);
 
             if (pos < 0) {
                 System.out.println("Not found!");
             } else {
                 System.out.print("Enter brand name: ");
-                String brandName = sc.nextLine(); sc.nextLine();
+                String brandName = sc.nextLine();
                 System.out.print("Enter sound brand: ");
                 String soundBrand = sc.nextLine();
                 System.out.print("Enter price: ");

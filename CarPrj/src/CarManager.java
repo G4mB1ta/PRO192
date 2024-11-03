@@ -4,27 +4,34 @@
  * @author kmduc
  */
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CarManager {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> ops = new ArrayList<>();
         
         String brandFile = "src\\brands.txt";
-        String carFile = "src\\cars.txt";
+        String carFile = "D:\\Projects\\Java\\CarPrj\\src\\cars.txt";
         
         BrandList brandList = new BrandList();
         boolean a = brandList.loadFromFile(brandFile);
         
-        if (!a) return;
+        if (!a) {
+            System.out.println("A");
+            return;
+        }
         
         CarList carList = new CarList(brandList);
         boolean b = carList.loadFromFile(carFile);
         
-        if (!b) return;
+        if (!b) {
+            System.out.println("B");
+            return;
+        }
         
         String choice1 = "List all brands";
         String choice2 = "Add a new brand";
@@ -76,28 +83,51 @@ public class CarManager {
                     break;
                 case 4:
                     System.out.println(ops.get(choice-1));
-                    brandList.saveToFile(brandFile);
+                    brandList.updateBrand();
                     break;
                 case 5:
                     System.out.println(ops.get(choice-1));
+                    brandList.saveToFile(brandFile);
                     break;
                 case 6:
                     System.out.println(ops.get(choice-1));
+                    carList.listCars();
                     break;
                 case 7:
                     System.out.println(ops.get(choice-1));
+                    System.out.print("Input brand: ");
+                    String brandCarID = new Scanner(System.in).nextLine();
+                    if (carList.searchID(brandCarID) != -1) {
+                        System.out.println(carList.get(carList.searchID(brandCarID)));
+                    } else {
+                        System.out.println("No result");
+                    }
                     break;
                 case 8:
                     System.out.println(ops.get(choice-1));
+                    carList.addCar();
                     break;
                 case 9:
                     System.out.println(ops.get(choice-1));
+                    boolean isRemoved  = carList.removeCar();
+                    if (isRemoved) {
+                        System.out.println("Car removed successfully !");
+                    } else {
+                        System.out.println("Car removed unsuccessfully !");
+                    }
                     break;
                 case 10:
                     System.out.println(ops.get(choice-1));
+                    boolean isUpdated  = carList.updateCar();
+                    if (isUpdated) {
+                        System.out.println("Car removed successfully !");
+                    } else {
+                        System.out.println("Car removed unsuccessfully !");
+                    }
                     break;
                 case 11:
                     System.out.println(ops.get(choice-1));
+                    carList.saveToFile(carFile);
                     break;
                 default:
                     return;
